@@ -1,0 +1,13 @@
+.btn{
+    display: flex;
+    position: relative;
+}
+
+.child{
+    width: 20;
+    
+}
+
+.col{
+    color: aqua;
+}
