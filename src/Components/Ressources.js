@@ -47,7 +47,7 @@ function Ressources() {
           collaborer efficacement avec vos collègues et, en fin de compte,
           travailler plus rapidement.<br></br>
           <br></br>Pour mettre le pied à l’étrier de vos équipes en télétravail
-          avec Slack, voici trois conseils.
+          avec Slack, voici trois conseils. Ceci est juste un texte de test.
         </p>
       </StyleRoot>
     </div>
