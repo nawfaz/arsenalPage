@@ -8,6 +8,7 @@ import Solutions from "./Components/Solutions";
 import SignUp from "./Components/SignUp";
 import car from "./Website-Background.jpg";
 import Grid from "@material-ui/core/Grid";
+import Corona from "./Components/Corona";
 
 function App() {
   const data = useSelector((state) => state.content);
@@ -28,6 +29,7 @@ function App() {
             <Route path="/ressources" exact component={Ressource} />
             <Route path="/solutions" exact component={Solutions} />
             <Route path="/login" exact component={SignUp} />
+            <Route path="/corona" exact component={Corona} />
           </Grid>
         </Router>
       </Grid>

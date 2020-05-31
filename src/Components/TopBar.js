@@ -30,8 +30,8 @@ export default function TopBar() {
             <Button style={{ color: "grey" }}>Honours</Button>
           </Link>
 
-          <Link className={classes.links}>
-            <Button style={{ color: "grey" }}>About</Button>
+          <Link className={classes.links} to="corona">
+            <Button style={{ color: "grey" }}>Corona</Button>
           </Link>
 
           <Link className={classes.links} to="login">

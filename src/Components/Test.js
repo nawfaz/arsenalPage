@@ -6,7 +6,9 @@ const fetchUser = async () => {
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      const info = [...data];
+
+      console.log(info[info.length - 1].Country);
     });
 };
 
