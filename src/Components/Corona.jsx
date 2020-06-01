@@ -15,20 +15,26 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BasicTextFields() {
   const [country, setCountry] = useState("");
-  const [infos, setInfos] = useState([]);
+  const [infos, setInfos] = useState(0);
+  const [date, setDate] = useState("");
+  const [deaths, setDeaths] = useState("");
+  const [recovered, setRecovered] = useState("");
   const classes = useStyles();
 
   const retrieveInfo = (info) => {
-    console.log(info);
-    var str =
-      "https://api.covid19api.com/dayone/country/" +
-      info +
-      "/status/confirmed/live";
-    fetch(str)
+    fetch("https://api.covid19api.com/summary")
       .then((res) => res.json())
       .then((data) => {
-        setInfos(data);
-      });
+        data.Countries.find((c) => {
+          if (c.Country === info) {
+            setInfos(c.TotalConfirmed);
+            setDate(c.Date);
+            setDeaths(c.TotalDeaths);
+            setRecovered(c.TotalRecovered);
+          }
+        });
+      })
+      .catch((e) => alert("Error 429 : TOO many requests. Try again."));
   };
 
   return (
@@ -39,17 +45,49 @@ export default function BasicTextFields() {
           onChange={(e) => setCountry(e.target.value)}
           id="outlined-basic"
           label="Country"
+          color="secondary"
+          variant="outlined"
+        />
+        <Button
+          onClick={() => retrieveInfo(country)}
+          style={{ marginLeft: 30 }}
+          variant="outlined"
+          color="secondary"
+        >
+          Search
+        </Button>
+        <TextField
+          value={date}
+          id="outlined-basic"
+          color="secondary"
+          label="Date"
+          variant="outlined"
+        />
+
+        <TextField
+          value={infos}
+          id="outlined-basic"
+          color="secondary"
+          label="Number of Confirmed cases"
+          variant="outlined"
+        />
+
+        <TextField
+          value={deaths}
+          id="outlined-basic"
+          color="secondary"
+          label="Number of Deaths"
+          variant="outlined"
+        />
+
+        <TextField
+          value={recovered}
+          id="outlined-basic"
+          color="secondary"
+          label="Number of Persons Recovered"
           variant="outlined"
         />
       </form>
-      <Button
-        onClick={() => retrieveInfo(country)}
-        style={{ marginLeft: 100 }}
-        variant="outlined"
-        color="primary"
-      >
-        Search
-      </Button>
     </div>
   );
 }

@@ -14,7 +14,7 @@ export default function TopBar() {
   return (
     <div>
       <AppBar color="transparent" position="static">
-        <Toolbar>
+        <Toolbar style={{ alignContent: "center" }}>
           <Link to="/">
             <img src={logo} alt="logo" height="30" width="50" />
           </Link>
@@ -31,7 +31,7 @@ export default function TopBar() {
           </Link>
 
           <Link className={classes.links} to="corona">
-            <Button style={{ color: "grey" }}>Corona</Button>
+            <Button style={{ color: "grey" }}>Covid</Button>
           </Link>
 
           <Link className={classes.links} to="login">
