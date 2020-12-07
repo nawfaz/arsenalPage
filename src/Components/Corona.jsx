@@ -79,7 +79,7 @@ export default function BasicTextFields() {
           variant="outlined"
         />
         <Button
-          onClick={() => deleteUser()}
+          onClick={() => retrieveInfo()}
           style={{ marginLeft: 30 }}
           variant="outlined"
           color="secondary"
