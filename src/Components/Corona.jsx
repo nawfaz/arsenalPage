@@ -27,7 +27,6 @@ export default function BasicTextFields() {
       .then((data) => {
         data.Countries.find((c) => {
           if (c.Country === country) {
-            console.log(c);
             setInfos(c.TotalConfirmed);
             setDate(c.Date);
             setDeaths(c.TotalDeaths);
