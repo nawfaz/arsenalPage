@@ -26,13 +26,9 @@ export default function BasicTextFields() {
       .then((res) => res.json())
       .then((data) => {
         data.Countries.find((c) => {
-<<<<<<< HEAD
-          if (c.Country === country) {
-            setInfos('tebhstijb');
-=======
+          console.log(c);
           if (c.Country === info) {
-            setInfos("rjfc,rd");
->>>>>>> b3325c68e93e0b7dc2499afa155fa70acdf181af
+            setInfos(c.TotalConfirmed);
             setDate(c.Date);
             setDeaths(c.TotalDeaths);
             setRecovered(c.TotalRecovered);
