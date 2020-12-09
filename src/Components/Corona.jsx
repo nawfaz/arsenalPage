@@ -21,19 +21,13 @@ export default function BasicTextFields() {
   const [recovered, setRecovered] = useState("");
   const classes = useStyles();
 
-  const retrieveInfoBack = (info) => {
-    fetch("http://localhost:8080/users")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  };
-
   const retrieveInfo = (info) => {
     fetch("https://api.covid19api.com/summary")
       .then((res) => res.json())
       .then((data) => {
         data.Countries.find((c) => {
           if (c.Country === info) {
-            setInfos(c.TotalConfirmed);
+            setInfos("rjfc,rd");
             setDate(c.Date);
             setDeaths(c.TotalDeaths);
             setRecovered(c.TotalRecovered);
@@ -41,30 +35,6 @@ export default function BasicTextFields() {
         });
       })
       .catch((e) => alert("Error 429 : TOO many requests. Try again."));
-  };
-
-  const postReq = () => {
-    // Simple POST request with a JSON body using fetch
-    var user = {
-      id: "5",
-      name: "nuza",
-      email: "nnn",
-      password: "feehkjn",
-    };
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    };
-    fetch("http://localhost:8080/users/add", requestOptions).then(
-      console.log("data sent")
-    );
-  };
-
-  const deleteUser = () => {
-    fetch("http://localhost:8080/users/delete/1", {
-      method: "DELETE",
-    }).then(console.log("data deleted"));
   };
 
   return (
@@ -79,7 +49,7 @@ export default function BasicTextFields() {
           variant="outlined"
         />
         <Button
-          onClick={() => deleteUser()}
+          onClick={() => retrieveInfo()}
           style={{ marginLeft: 30 }}
           variant="outlined"
           color="secondary"
