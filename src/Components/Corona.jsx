@@ -26,7 +26,7 @@ export default function BasicTextFields() {
       .then((res) => res.json())
       .then((data) => {
         data.Countries.find((c) => {
-          console.log(c);
+          console.log('fjdnc');
           if (c.Country === info) {
             setInfos(c.TotalConfirmed);
             setDate(c.Date);
