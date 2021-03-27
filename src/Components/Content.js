@@ -34,7 +34,7 @@ function Content() {
       <h2 class={style.h2}>Arsenal Football Club</h2>
       <StyleRoot>
         <p class={style.p} style={styles.bounce}>
-          Arsenal Football Club is a professional football club based in
+          Arsenal Football Club is a phahahaharofessional football club based in
           Islington, London, England, that plays in the Premier League, the top
           flight of English football. The club has won 13 League titles, a
           record 13 FA Cups, two League Cups, 15 FA Community Shields, the only
